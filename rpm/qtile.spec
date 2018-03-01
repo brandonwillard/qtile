@@ -1,7 +1,7 @@
 Summary: A pure-Python tiling window manager
 Name: qtile
-Version: 0.12.0
-Release: 1%{?dist}
+Version: 0.10.7
+Release: 3%{?dist}
 Source0: https://github.com/qtile/qtile/archive/v%{version}.tar.gz
 License: MIT and GPLv3+
 # All MIT except for:
@@ -78,29 +78,7 @@ install -m 644 %{SOURCE1} %{buildroot}%{_datadir}/xsessions/
 
 
 %changelog
-* Wed Jul 18 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.12.0-1
-- !!! Config breakage !!!
--   Tile layout commands up/down/shuffle_up/shuffle_down changed to be
--   more consistent with other layouts
--   move qcmd to qtile-cmd because of conflict with renameutils, move
--   dqcmd to dqtile-cmd for symmetry
-- add `add_after_last` option to Tile layout to add windows to the end of the list
-- add new formatting options to TaskList
-- allow Volume to open app on right click
-- fix floating of file transfer windows and java drop-downs
-- fix exception when calling `cmd_next` and `cmd_previous` on layout without windows
-- fix caps lock affected behaviour of key bindings
-- re-create cache dir if it is deleted while qtile is running
-- fix CheckUpdates widget color when no updates
-- handle cases where BAT_DIR does not exist
-- fix the wallpaper widget when using `wallpaper_command`
-- fix Tile layout order to not reverse on reset
-- fix calling `focus_previous/next` with no windows
-
-* Fri Mar 30 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.1-2
-- Add unpackaged files %#{_bindir}/dqcmd %#{_bindir}/qcmd
-
-* Wed Feb 28 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.1-1
+* Wed Feb 28 2018 John Dulaney <jdulaney@fedoraproject.org> - 0.11.0-1
 - !!! Completely changed extension configuration, see the documentation !!!
 - !!! `extention` subpackage renamed to `extension` !!!
 - !!! `extentions` configuration variable changed to `extension_defaults` !!!
